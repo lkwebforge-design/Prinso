@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary":"#00363a","surface-bright":"#39393b","primary-fixed":"#ffdcbc","tertiary-fixed-dim":"#00dbe9","on-surface-variant":"#d3c4b8","outline":"#9b8e83","on-primary":"#442b0d","surface":"#131315","tertiary":"#00dbe9","tertiary-fixed":"#7df4ff","on-primary-fixed":"#2c1700","on-secondary-fixed":"#121f00","surface-tint":"#e9bf95","inverse-on-surface":"#313032","error-container":"#93000a","surface-container-low":"#1b1b1d","surface-container":"#201f21","on-tertiary-fixed-variant":"#004f54","surface-container-high":"#2a2a2c","on-error":"#690005","inverse-surface":"#e5e1e4","outline-variant":"#4f453c","error":"#ffb4ab","on-background":"#e5e1e4","primary":"#e9bf95","secondary-fixed-dim":"#93db00","on-tertiary-fixed":"#002022","on-secondary-fixed-variant":"#324f00","on-secondary":"#213600","secondary-fixed":"#aef831","on-secondary-container":"#3b5b00","surface-variant":"#353437","on-tertiary-container":"#003f44","surface-container-lowest":"#0e0e10","inverse-primary":"#785836","background":"#131315","secondary-container":"#93db00","secondary":"#aef831","on-primary-container":"#4e3314","surface-dim":"#131315","primary-container":"#c29b74","surface-container-highest":"#353437","primary-fixed-dim":"#e9bf95","on-surface":"#e5e1e4","on-error-container":"#ffdad6","on-primary-fixed-variant":"#5e4121","tertiary-container":"#00b3be"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","gutter-sm":"1rem","space-lg":"1.5rem","margin":"2rem","space-xs":"0.25rem","gutter-lg":"2.5rem","space-sm":"0.5rem","space-xl":"3rem","margin-lg":"4rem","space-md":"1rem","margin-sm":"1.25rem"},"fontFamily":{"headline-md":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"headline-lg":["Space Grotesk"],"display-xl":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"label-mono-lg":["JetBrains Mono"],"label-mono-xs":["JetBrains Mono"],"display-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"label-mono-md":["JetBrains Mono"],"body-md":["Hanken Grotesk"],"display-lg-mobile":["Space Grotesk"]},"fontSize":{"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["17px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg":["38px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-xl":["84px",{"lineHeight":"88px","letterSpacing":"-0.04em","fontWeight":"700"}],"display-xl-mobile":["44px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"700"}],"label-mono-lg":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"500"}],"label-mono-xs":["9px",{"lineHeight":"12px","letterSpacing":"0.1em","fontWeight":"600"}],"display-lg":["60px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-md":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md"><div class="h-16 w-full px-gutter lg:px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Prinso Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UghqLZD1dSW3fzWQAsmKo37ZNFb7cVtKhTjmljfvD8iBeJP-SyF-knjO9CSTNKwPc0-OWVqe6Q5LHf46HA86ZOxzJS1IQ37C8JJa0oSRn4k1V2hMdKtEPPAmXWQaGKsawrvbAq3MkrfAvKG7HT3cUYE-dxRvVwU-HMWAeyweohevacMLYeaSqjBRTWvqMcjXEhvjqB1GcRCg_5HQnZeR30P7YblIb5y1QyvPZe6rJ8OtUj2zRal3O5Kg"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface uppercase">PRINSO</span><span class="hidden xl:inline-block font-label-mono-xs text-label-mono-xs text-outline px-space-xs py-0.5 bg-surface-container-high">// V1.04-ARCH</span></div><div class="hidden md:flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-mono-xs text-label-mono-xs text-secondary uppercase tracking-widest">PRINSO-1 SOTA WEIGHTS LIVE</span><span class="font-label-mono-xs text-label-mono-xs text-outline">[ISSUE NO. 00124]</span></div><nav class="hidden lg:flex items-center gap-space-md ml-space-sm" data-active-classes="text-primary font-bold"><a aria-current="page" class="uppercase tracking-wider transition-colors text-primary font-bold" data-path="intro" href="#">Intro</a><a class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Features</a><a class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="specifications" href="#">Specifications</a><a class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="benchmarks" href="#">Benchmarks</a><a class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="model-paper" href="#">Model Paper</a></nav></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center px-space-md py-2 bg-primary-container text-on-primary-container font-label-mono-lg text-label-mono-lg uppercase font-semibold transition-colors hover:bg-inverse-surface hover:text-inverse-on-surface" href="#"><span>Download Checkpoint (.OBJ)</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full text-on-surface">
+<!-- TOP EDITORIAL TICKER -->
+<section class="w-full bg-surface-container-lowest px-gutter py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-mono-xs text-label-mono-xs uppercase tracking-widest text-secondary font-semibold">ISSUE NO. 00124 // SOTA HARDWARE-FREE OBJECT MODEL</span>
+</div>
+<div class="flex items-center gap-space-md font-label-mono-xs text-label-mono-xs text-outline uppercase">
+<span>ZERO-CLOUD AIR-GAPPED CORK</span>
+<span>•</span>
+<span>LATENCY: 0.00 MS</span>
+<span>•</span>
+<span>VRAM CONSUMPTION: 0.0 MB</span>
+</div>
+</section>
+<!-- HERO SECTION -->
+<section class="w-full px-gutter lg:px-gutter-lg pt-space-xl pb-margin-lg bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Monumental Editorial Copy -->
+<div class="lg:col-span-7 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs text-primary uppercase font-bold">// PHYSICAL COMPUTATION KERNEL</span>
+<span class="font-label-mono-xs text-label-mono-xs text-outline">[ARCH: CIRCULAR-1.04]</span>
+</div>
+<h1 class="font-display-xl text-display-xl uppercase text-on-surface tracking-tighter mb-space-md">
+            Made for mugs.<br/>
+<span class="text-primary italic">Built for tables.</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-2xl mb-space-lg font-light leading-snug">
+            Prinso isn’t just a coaster. Designed to lift, insulate, and grip in all the right ways. The world’s most unnecessarily sophisticated cork coaster powered by <span class="text-primary font-medium">AI*</span>.
+          </p>
+<div class="p-space-sm bg-surface-container-low max-w-xl mb-space-xl">
+<p class="font-label-mono-xs text-label-mono-xs text-outline">
+              * Adobe Illustrator. AI fills in the gaps. We said high five. It heard six. Zero inference hallucination, guaranteed 100% natural Quercus suber substrate.
+            </p>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="grid grid-cols-3 gap-space-sm max-w-xl">
+<div class="p-space-md bg-surface-container">
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase tracking-wider mb-1">ELEVATION</div>
+<div class="font-headline-md text-headline-md text-primary font-bold">1.0×</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">Exactly 1 Coaster Thick</div>
+</div>
+<div class="p-space-md bg-surface-container">
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase tracking-wider mb-1">CIRCULARITY</div>
+<div class="font-headline-md text-headline-md text-secondary font-bold">1.0000</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">RoPE Algorithmic Circle</div>
+</div>
+<div class="p-space-md bg-surface-container">
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase tracking-wider mb-1">POWER DRAW</div>
+<div class="font-headline-md text-headline-md text-tertiary font-bold">0.0W</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">No Tokens Required</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive 3D Showcase Simulator -->
+<div class="lg:col-span-5 flex flex-col bg-surface-container-low p-space-md">
+<!-- Hardware Telemetry Header -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface font-semibold">PRINSO-1 PHYSICAL SIMULATOR</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-outline bg-surface-container-highest px-space-xs py-0.5">MESH // 4,800 FACETS</span>
+</div>
+<!-- 3D Canvas Visualizer -->
+<div class="relative w-full h-80 bg-surface-container-lowest flex items-center justify-center overflow-hidden cursor-crosshair group" id="sim-viewport">
+<!-- Subtle isometric wireframe matrix -->
+<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="24" id="grid-pat" patternunits="userSpaceOnUse" width="24">
+<path class="text-outline" d="M 24 0 L 0 0 0 24" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-pat)" height="100%" width="100%"></rect>
+</svg>
+<!-- Dynamic 3D Cork Coaster Visual Element -->
+<div class="relative w-48 h-48 transition-transform duration-300 ease-out flex items-center justify-center" id="coaster-mesh">
+<!-- Outer Glow Halo -->
+<div class="absolute -inset-4 rounded-full bg-primary/10 blur-xl"></div>
+<!-- Stack Layer 3 (Bottom Shadow / Rim) -->
+<div class="absolute w-44 h-44 rounded-full bg-surface-container-highest transform translate-y-3 opacity-90 shadow-2xl"></div>
+<!-- Cork Base Texture Cylinder -->
+<div class="absolute w-44 h-44 rounded-full bg-primary-container flex items-center justify-center overflow-hidden transform translate-y-1 shadow-lg">
+<!-- Radial Ring Texture -->
+<div class="w-40 h-40 rounded-full bg-surface-container-high/40 flex items-center justify-center">
+<div class="w-32 h-32 rounded-full bg-primary-container/80 flex items-center justify-center">
+<!-- Monogram Engraving -->
+<div class="flex flex-col items-center justify-center text-on-primary-container select-none">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tighter">P</span>
+<span class="font-label-mono-xs text-label-mono-xs tracking-widest mt-[-6px]">98mm</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Wireframe Top Overlay (RoPE Ring) -->
+<svg class="absolute w-48 h-48 pointer-events-none transition-all duration-300" id="rope-overlay" viewbox="0 0 100 100">
+<circle class="text-secondary stroke-dasharray-[4,2]" cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-width="0.8"></circle>
+<circle class="text-primary stroke-dasharray-[2,4]" cx="50" cy="50" fill="none" r="41" stroke="currentColor" stroke-width="0.5"></circle>
+<line class="text-outline opacity-40" stroke="currentColor" stroke-width="0.4" x1="50" x2="50" y1="4" y2="96"></line>
+<line class="text-outline opacity-40" stroke="currentColor" stroke-width="0.4" x1="4" x2="96" y1="50" y2="50"></line>
+</svg>
+<!-- Temperature Heat Shock Indicator (Toggles on interaction) -->
+<div class="absolute inset-0 rounded-full bg-error/0 transition-colors duration-500 pointer-events-none" id="heat-glow"></div>
+</div>
+<!-- Live Overlay HUD Coordinates -->
+<div class="absolute top-space-xs left-space-xs font-label-mono-xs text-label-mono-xs text-outline space-y-0.5">
+<div>XYZ: [ 0.00, 0.00, 1.00 ]</div>
+<div>MESH_PARITY: 99.998%</div>
+<div>NORMAL: (0, 0, 1) FLUID-READY</div>
+</div>
+<div class="absolute bottom-space-xs right-space-xs font-label-mono-xs text-label-mono-xs text-secondary bg-surface-container-high px-space-xs py-0.5">
+<span id="active-state-tag">STATUS: PASSIVE_REST</span>
+</div>
+</div>
+<!-- Simulation Parameter Controls: Temperature -->
+<div class="mt-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md uppercase text-on-surface-variant font-semibold">THERMAL INFERENCE TEMPERATURE:</span>
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold" id="current-temp-val">T = 1.0 (BALANCED)</span>
+</div>
+<!-- Parameter Toggle Bar -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container-highest p-1">
+<button class="temp-btn py-1.5 px-space-xs font-label-mono-xs text-label-mono-xs uppercase text-on-surface hover:text-on-surface bg-surface-container-high transition-colors" onclick="setSimulationTemperature(10, 'Creative', 'text-tertiary', '0.74')">
+              Creative T=10
+            </button>
+<button class="temp-btn py-1.5 px-space-xs font-label-mono-xs text-label-mono-xs uppercase text-on-primary bg-primary font-bold transition-colors" onclick="setSimulationTemperature(1, 'Balanced', 'text-primary', '0.82')">
+              Balanced T=1
+            </button>
+<button class="temp-btn py-1.5 px-space-xs font-label-mono-xs text-label-mono-xs uppercase text-on-surface hover:text-on-surface bg-surface-container-high transition-colors" onclick="setSimulationTemperature(0.1, 'Deterministic', 'text-secondary', '0.99')">
+              Deterministic T=0.1
+            </button>
+</div>
+</div>
+<!-- Realtime Telemetry Grid -->
+<div class="mt-space-md grid grid-cols-2 gap-space-xs font-label-mono-xs text-label-mono-xs bg-surface-container-lowest p-space-sm">
+<div class="text-outline">RoPE CIRCULARITY:</div>
+<div class="text-right text-on-surface font-semibold">1.0 (Exact 2πr)</div>
+<div class="text-outline">FRICTION COEFFICIENT:</div>
+<div class="text-right text-primary font-semibold" id="sim-friction">µ = 0.82</div>
+<div class="text-outline">CONDENSATION BARRIER:</div>
+<div class="text-right text-secondary font-semibold">4.82 kPa Passive</div>
+<div class="text-outline">COMPUTE KERNEL:</div>
+<div class="text-right text-on-surface font-semibold">Local Wood Grain</div>
+</div>
+<!-- Interactive Triggers -->
+<div class="mt-space-md grid grid-cols-2 gap-space-sm">
+<button class="py-2.5 px-space-sm bg-surface-container-high text-on-surface hover:bg-surface-bright font-label-mono-md text-label-mono-md uppercase font-semibold flex items-center justify-center gap-space-xs transition-colors" onclick="simulateDropTest()">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>Simulate Drop</span>
+</button>
+<a class="py-2.5 px-space-sm bg-primary-container text-on-primary-container hover:bg-inverse-surface hover:text-inverse-on-surface font-label-mono-md text-label-mono-md uppercase font-semibold flex items-center justify-center gap-space-xs transition-colors" href="#model-paper">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Inspect Checkpoint</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- EDITORIAL DIVIDER WITH METADATA -->
+<div class="w-full bg-surface-container px-gutter py-space-xs flex items-center justify-between font-label-mono-xs text-label-mono-xs text-outline uppercase">
+<span>// SECTION 02: CAPABILITIES MATRIX</span>
+<span>SOTA REASONING IN RIGID POROUS WOOD</span>
+<span>PARITY CHECK: PASS</span>
+</div>
+<!-- SOTA ARCHITECTURE & CAPABILITIES (Satirical Tech Breakthroughs) -->
+<section class="w-full px-gutter lg:px-gutter-lg py-margin-lg bg-surface-container-lowest">
+<div class="max-w-4xl mb-space-xl">
+<div class="font-label-mono-md text-label-mono-md text-primary uppercase font-bold mb-space-xs">// NOVEL HEURISTICS</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight mb-space-sm">
+        Unprecedented AI* Breakthroughs in Table Defense
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+        While traditional Silicon Valley models burn gigawatts to generate corporate sludge, Prinso deploys passive biological cellulose architecture. 100% on-device. Zero inference latency.
+      </p>
+</div>
+<!-- 6-Cell Bento Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Edge Computing -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-secondary-container text-on-secondary-container font-semibold uppercase">0 TOKENS / SEC</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">memory</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            Runs on the edge.<br/>Refuses the cloud.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Pure on-table computation with zero token burn, infinite context window, and zero reliance on high-bandwidth memory. It simply exists, refusing AWS billing updates entirely.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          TELEMETRY: AIR-GAPPED // ALWAYS-ON UPTIME
+        </div>
+</div>
+<!-- Card 2: Smart Flip Encryption -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-tertiary-container text-on-tertiary-container font-semibold uppercase">PHYSICAL CIPHER</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">lock_reset</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            Smart Flip<br/>Encryption.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Write a confidential message on the underside with a ballpoint pen. Flip. Instantly encrypted by desk physics until someone flips it back. Post-quantum cryptographic security.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          ALGORITHM: 180° GRAVITATIONAL ROTATION
+        </div>
+</div>
+<!-- Card 3: Thermodynamic Model (TDM) -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-primary-container text-on-primary-container font-semibold uppercase">ΔT = 85°C STABLE</span>
+<span class="material-symbols-outlined text-primary text-[20px]">device_thermostat</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            Thermal Diffusion<br/>Model (TDM).
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Handles piping-hot porcelain mugs to freezing condensation cocktails without thermal throttling or warp vectors. Your coffee table already tapped out three sips ago.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          TDM SPECS: A VISUALIZATION, NOT A WARRANTY
+        </div>
+</div>
+<!-- Card 4: Antislip Grip-Lock -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-surface-container-high text-on-surface font-semibold uppercase">µ = 0.82 FRICTION</span>
+<span class="material-symbols-outlined text-on-surface text-[20px]">pan_tool_alt</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            Grip-Locked<br/>Antislip System.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Micro-textured cellular cork engineered so firmly that drinks file a restraining order against accidental lateral displacement. Liquid spills? Politely discouraged.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          SURFACE TENSION: PASSIVE SUCTION RETENTION
+        </div>
+</div>
+<!-- Card 5: Circularity Heuristic (RoPE) -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-secondary-container text-on-secondary-container font-semibold uppercase">RoPE ACCREDITED</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">change_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            Now 37.9% More<br/>Circular.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Our creative technologists recalibrated its circumference with disturbing levels of attention to detail. Roundness Optimization &amp; Perimeter Engineering (RoPE) pushed to 1.0.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          PERIMETER TOLERANCE: ±0.0001 MM
+        </div>
+</div>
+<!-- Card 6: Plant-Based Sustainability -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 bg-surface-container-highest text-primary font-semibold uppercase">QUERCUS SUBER</span>
+<span class="material-symbols-outlined text-primary text-[20px]">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-sm">
+            100% Plant-Based<br/>Inference.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            First bark harvest occurs at 25 years, followed by 9-year regenerative cycles. Zero GPUs were harmed, no thermal paste applied, and absolutely carbon negative.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-high/40 p-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+          RENEWABLE PERIOD: 9 YR BARK REGENERATION
+        </div>
+</div>
+</div>
+</section>
+<!-- PRODUCT SPECIFICATION BENCHMARK TABLE -->
+<section class="w-full px-gutter lg:px-gutter-lg py-margin-lg bg-surface">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div>
+<div class="font-label-mono-md text-label-mono-md text-primary uppercase font-bold mb-space-xs">// CONFIGURATION DECK</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight">
+          Product Tier Matrix: Choose Your Lift
+        </h2>
+</div>
+<div class="font-label-mono-xs text-label-mono-xs text-outline max-w-xs text-left md:text-right">
+        COMPARATIVE EVALUATION ACROSS PHYSICAL DEPLOYMENT LAYERS. ALL MODELS BACKWARD-COMPATIBLE TO 5000 BCE.
+      </div>
+</div>
+<!-- Structured Technical Matrix -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-label-mono-md text-label-mono-md border-collapse min-w-[700px]">
+<thead>
+<tr class="bg-surface-container-high text-on-surface uppercase text-label-mono-xs">
+<th class="p-space-md">Hardware Attribute</th>
+<th class="p-space-md">Prinso (Base)</th>
+<th class="p-space-md text-primary font-bold">Prinso Pro</th>
+<th class="p-space-md text-secondary font-bold">Prinso Pro Max</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Primary Philosophy</td>
+<td class="p-space-md text-on-surface">One coaster. One job. Quiet desk presence.</td>
+<td class="p-space-md text-primary">Twice the cork. Twice the commitment.</td>
+<td class="p-space-md text-secondary font-semibold">Maximum stack flex. Slightly above it all.</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Stack Count</td>
+<td class="p-space-md text-on-surface font-headline-md text-headline-md">1</td>
+<td class="p-space-md text-primary font-headline-md text-headline-md">2</td>
+<td class="p-space-md text-secondary font-headline-md text-headline-md">3</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Effective Lift</td>
+<td class="p-space-md text-on-surface">1 coaster thick (~4.5mm)</td>
+<td class="p-space-md text-on-surface">2 coasters thick (~9.0mm)</td>
+<td class="p-space-md text-secondary font-bold">3 coasters thick (~13.5mm)</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Material Substrate</td>
+<td class="p-space-md text-on-surface">Natural Agglomerated Cork</td>
+<td class="p-space-md text-on-surface">Dual-Laminate Cork</td>
+<td class="p-space-md text-on-surface">High-Density Triple Matrix Cork</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Connectivity</td>
+<td class="p-space-md text-on-surface">None (Glorious)</td>
+<td class="p-space-md text-on-surface">None (Air-Gapped)</td>
+<td class="p-space-md text-on-surface">None (Military Grade Absence)</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Pairing Protocol</td>
+<td class="p-space-md text-on-surface">Not Required</td>
+<td class="p-space-md text-on-surface">Not Required</td>
+<td class="p-space-md text-on-surface">Not Required</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Over-the-Air Updates</td>
+<td class="p-space-md text-outline">Never (Immune to bugs)</td>
+<td class="p-space-md text-outline">Never (Zero telemetry)</td>
+<td class="p-space-md text-outline">Never (Ever)</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="p-space-md text-outline font-semibold uppercase">Recommended Context</td>
+<td class="p-space-md text-on-surface">Daily coffee mugs &amp; silent desks</td>
+<td class="p-space-md text-on-surface">Taller insulated tumblers &amp; cold brew</td>
+<td class="p-space-md text-secondary font-bold">Ceramic teapots, desk dominance flexes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ACADEMIC RESEARCH PAPER & BENCHMARK SECTION -->
+<section class="w-full px-gutter lg:px-gutter-lg py-margin-lg bg-surface-container-low" id="model-paper">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Academic Abstract Callout -->
+<div class="lg:col-span-8 bg-surface-container p-space-xl relative">
+<div class="w-full h-1 bg-primary mb-space-md"></div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<span class="font-label-mono-xs text-label-mono-xs text-primary uppercase font-bold tracking-widest">
+            ARXIV:2409.11892v1 [CS.AI] // PEER-REVIEWED SPECIFICATION
+          </span>
+<span class="font-label-mono-xs text-label-mono-xs text-outline uppercase">
+            EVALUATION SUITE: WOODENBENCH 1.0
+          </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-on-surface mb-space-md">
+          Prinso-1: An Open-Weight Physical Foundation Model
+        </h3>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-space-md leading-relaxed">
+<p>
+<strong class="text-on-surface uppercase font-label-mono-md text-label-mono-md">Abstract —</strong>
+            We present <em>Prinso-1</em>, an open-weight 3D model of a cork coaster for rendering, simulation, and gloriously unnecessary research. Prinso-1 faithfully reproduces key physical coaster behaviors: table protection, absolute circularity, and passive thermal moderation under everyday beverage conditions.
+          </p>
+<p>
+            Released in clean OBJ format with comprehensive baseline evaluations on our proprietary <em>WoodenBench</em> (a standardized evaluation suite conducted on a single desk and very possibly rigged by us). Limitations include heavy dependency on gravity, mugs, and human deployment. Zero hallucinations detected across 1,000 continuous hours of espresso cup retention.
+          </p>
+</div>
+<!-- Academic Document Triggers -->
+<div class="mt-space-lg flex flex-wrap gap-space-md pt-space-md">
+<button class="px-space-md py-2 bg-primary text-on-primary font-label-mono-md text-label-mono-md uppercase font-bold hover:bg-inverse-surface hover:text-inverse-on-surface transition-colors flex items-center gap-space-xs" onclick="alert('Downloading Prinso-1 Model Paper (PDF)... Fictional research paper ready in memory.')">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>Paper (PDF)</span>
+</button>
+<button class="px-space-md py-2 bg-surface-container-high text-on-surface font-label-mono-md text-label-mono-md uppercase font-bold hover:bg-surface-bright transition-colors flex items-center gap-space-xs" onclick="alert('Downloading Prinso-1 Checkpoint (.OBJ)... 4,800 polygons ready.')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Checkpoints (.OBJ)</span>
+</button>
+<button class="px-space-md py-2 bg-surface-container-lowest text-primary font-label-mono-md text-label-mono-md uppercase hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" onclick="toggleBibtexModal()">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>BibTeX Citation</span>
+</button>
+</div>
+<!-- Inline BibTeX Box -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-md font-label-mono-xs text-label-mono-xs text-outline overflow-x-auto relative" id="bibtex-block">
+<button class="absolute top-space-xs right-space-xs px-2 py-1 bg-surface-container-high text-on-surface hover:text-primary transition-colors uppercase" onclick="copyBibtexText()">
+            Copy
+          </button>
+<pre class="text-on-surface-variant font-label-mono-xs text-label-mono-xs" id="bibtex-content">@misc{prinso2025,
+  title        = {Prinso-1: Open-Weight Coaster Model},
+  author       = {Prinso Creative Machine Intelligence Lab},
+  year         = {2025},
+  howpublished = {OBJ and Cellular Cork Release},
+  note         = {A high-fidelity physical model of an unnecessary cork coaster.}
+}</pre>
+</div>
+</div>
+<!-- WoodenBench Benchmark Telemetry -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg flex flex-col justify-between">
+<div>
+<div class="font-label-mono-xs text-label-mono-xs text-secondary uppercase font-semibold mb-space-xs">
+            BENCHMARK RESULTS // WoodenBench v1.0
+          </div>
+<h4 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-md">
+            SOTA On-Desk Metrics
+          </h4>
+<div class="space-y-space-md">
+<!-- Metric 1 -->
+<div>
+<div class="flex justify-between font-label-mono-xs text-label-mono-xs mb-1">
+<span class="text-on-surface">WOODENBENCH COFFEE RETENTION</span>
+<span class="text-secondary font-bold">99.8%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary w-[99.8%]"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div>
+<div class="flex justify-between font-label-mono-xs text-label-mono-xs mb-1">
+<span class="text-on-surface">THERMAL LEAKAGE RESISTANCE</span>
+<span class="text-primary font-bold">100.0%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary w-[100%]"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div>
+<div class="flex justify-between font-label-mono-xs text-label-mono-xs mb-1">
+<span class="text-on-surface">INFERENCE LATENCY (MUG DROP)</span>
+<span class="text-tertiary font-bold">0.00ms</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary w-[100%]"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div>
+<div class="flex justify-between font-label-mono-xs text-label-mono-xs mb-1">
+<span class="text-on-surface">VRAM UTILIZATION</span>
+<span class="text-outline font-bold">0 MB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+<div class="h-full bg-outline w-[0%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-sm bg-surface-container">
+<span class="font-label-mono-xs text-label-mono-xs text-outline uppercase block mb-1">PEER REVIEW QUOTE</span>
+<p class="font-body-sm text-body-sm text-on-surface italic">
+            “Prinso-1 A0B is currently the best physical weight model available. Evaluated on desk. Trust me bro.”
+          </p>
+<span class="font-label-mono-xs text-label-mono-xs text-primary mt-1 block">— LocalLLaMA Subreddit Reviewer</span>
+</div>
+</div>
+</div>
+</section>
+<!-- COMMUNITY PEER REVIEWS -->
+<section class="w-full px-gutter lg:px-gutter-lg py-margin-lg bg-surface">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div>
+<div class="font-label-mono-md text-label-mono-md text-primary uppercase font-bold mb-space-xs">// EMPIRICAL VERIFICATION</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight">
+          People All Around The World Love Prinso
+        </h2>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-2">
+<span class="font-headline-md text-headline-md text-primary font-bold">4.9 / 5.0</span>
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase">
+<div>AGGREGATE VERIFIED</div>
+<div>364 CITATIONS</div>
+</div>
+</div>
+</div>
+<!-- Review Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1: Gol D. Roger -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs text-secondary font-bold">[ 5.0 / 5.0 ]</span>
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic mb-space-md leading-relaxed">
+            “My coaster? If you want it, I’ll let you have it. Look for it! I left everything I gathered together in one place on the coffee table!”
+          </p>
+</div>
+<div class="pt-space-md bg-surface-container-high/30 p-space-sm">
+<div class="font-headline-md text-headline-md text-primary font-bold uppercase">Gol D. Roger</div>
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase">Old-school Pirate • Grand Line Operations</div>
+</div>
+</div>
+<!-- Review 2: Jamie R. -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs text-secondary font-bold">[ 5.0 / 5.0 ]</span>
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic mb-space-md leading-relaxed">
+            “We are so cooked. Hollywood is absolutely not ready for a coaster this cinematic. 24/7 uptime. Zero memory leaks on my glass table.”
+          </p>
+</div>
+<div class="pt-space-md bg-surface-container-high/30 p-space-sm">
+<div class="font-headline-md text-headline-md text-primary font-bold uppercase">Jamie R.</div>
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase">AI Influencer • Ex-Web3 Evangelist</div>
+</div>
+</div>
+<!-- Review 3: Edan K. -->
+<div class="bg-surface-container-low p-space-lg flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-mono-xs text-label-mono-xs text-secondary font-bold">[ 4.9 / 5.0 ]</span>
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic mb-space-md leading-relaxed">
+            “This is the best coaster that I’ve ever deployed. I can’t embark on sub-orbital missions without it. Zero latency even in micro-gravity.”
+          </p>
+</div>
+<div class="pt-space-md bg-surface-container-high/30 p-space-sm">
+<div class="font-headline-md text-headline-md text-primary font-bold uppercase">Edan K.</div>
+<div class="font-label-mono-xs text-label-mono-xs text-outline uppercase">NASA Astronaut Wannabe • Orbit Station</div>
+</div>
+</div>
+</div>
+</section>
+<!-- IMMERSIVE CALL TO ACTION / MONOLITHIC BANNER -->
+<section class="w-full px-gutter lg:px-gutter-lg py-margin-lg bg-surface-container-lowest">
+<div class="p-space-xl lg:p-margin-lg bg-surface-container relative overflow-hidden flex flex-col items-center text-center">
+<!-- Faint decorative background text -->
+<span class="absolute -bottom-10 select-none pointer-events-none font-display-xl text-display-xl text-surface-container-high/40 uppercase tracking-tighter whitespace-nowrap">
+        PRINSO OBJECT ARCHITECTURE
+      </span>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-highest mb-space-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface uppercase font-bold tracking-widest">REALITY CHECK COMPLETE</span>
+</div>
+<h2 class="font-display-lg text-display-lg uppercase text-on-surface max-w-4xl tracking-tight mb-space-md">
+        We caught your attention with a non-existent product.
+      </h2>
+<p class="font-headline-md text-headline-md text-primary max-w-2xl font-light mb-space-xl">
+        If we can craft an irresistible physical AI foundation model for a simple cork coaster, imagine what Prinso can engineer for your real-world architecture.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md z-10">
+<button class="px-space-xl py-3 bg-primary text-on-primary font-label-mono-lg text-label-mono-lg uppercase font-bold hover:bg-inverse-surface hover:text-inverse-on-surface transition-colors" onclick="simulateDropTest()">
+          Download OBJ Model
+        </button>
+<a class="px-space-lg py-3 bg-surface-container-high text-on-surface font-label-mono-lg text-label-mono-lg uppercase font-semibold hover:bg-surface-bright transition-colors" href="#model-paper">
+          Explore Checkpoints
+        </a>
+</div>
+<div class="mt-space-xl font-label-mono-xs text-label-mono-xs text-outline uppercase tracking-wider">
+        DISCLAIMER: PRINSO IS A FICTIONAL CREATIVE SPECULATION. NO REAL COWS WERE HARMED, BUT IT IS 100% CORK.
+      </div>
+</div>
+</section>
+</div>
+<script>
+  function setSimulationTemperature(temp, label, colorClass, frictionVal) {
+    var readout = document.getElementById('current-temp-val');
+    var frictionReadout = document.getElementById('sim-friction');
+    var statusTag = document.getElementById('active-state-tag');
+    var mesh = document.getElementById('coaster-mesh');
+    var heatGlow = document.getElementById('heat-glow');
+
+    if (readout) {
+      readout.textContent = 'T = ' + temp + ' (' + label.toUpperCase() + ')';
+    }
+    if (frictionReadout) {
+      frictionReadout.textContent = 'µ = ' + frictionVal;
+    }
+
+    if (temp === 10) {
+      if (mesh) mesh.style.transform = 'scale(1.08) rotate(12deg)';
+      if (heatGlow) heatGlow.className = 'absolute inset-0 rounded-full bg-error/30 transition-colors duration-500 pointer-events-none';
+      if (statusTag) statusTag.textContent = 'STATUS: THERMAL_CHAOS';
+    } else if (temp === 1) {
+      if (mesh) mesh.style.transform = 'scale(1.0) rotate(0deg)';
+      if (heatGlow) heatGlow.className = 'absolute inset-0 rounded-full bg-error/0 transition-colors duration-500 pointer-events-none';
+      if (statusTag) statusTag.textContent = 'STATUS: BALANCED_INFERENCE';
+    } else {
+      if (mesh) mesh.style.transform = 'scale(0.96) rotate(-4deg)';
+      if (heatGlow) heatGlow.className = 'absolute inset-0 rounded-full bg-tertiary/20 transition-colors duration-500 pointer-events-none';
+      if (statusTag) statusTag.textContent = 'STATUS: ABSOLUTE_ZERO_RIGIDITY';
+    }
+  }
+
+  function simulateDropTest() {
+    var mesh = document.getElementById('coaster-mesh');
+    var statusTag = document.getElementById('active-state-tag');
+    if (!mesh) return;
+
+    if (statusTag) statusTag.textContent = 'SIMULATING: GRAVITY ACCELERATION...';
+
+    mesh.style.transition = 'transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    mesh.style.transform = 'translateY(24px) scale(0.92, 1.08)';
+
+    setTimeout(function() {
+      mesh.style.transform = 'translateY(-12px) scale(1.05, 0.95)';
+      setTimeout(function() {
+        mesh.style.transform = 'translateY(0px) scale(1.0, 1.0)';
+        if (statusTag) statusTag.textContent = 'DROP TEST: 0% CRITICAL FAILURE';
+      }, 160);
+    }, 150);
+  }
+
+  function copyBibtexText() {
+    var bibtex = document.getElementById('bibtex-content');
+    if (bibtex && navigator.clipboard) {
+      navigator.clipboard.writeText(bibtex.innerText).then(function() {
+        alert('BibTeX Citation copied to clipboard.');
+      });
+    }
+  }
+
+  function toggleBibtexModal() {
+    var block = document.getElementById('bibtex-block');
+    if (block) {
+      block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      block.classList.add('bg-surface-container-high');
+      setTimeout(function() {
+        block.classList.remove('bg-surface-container-high');
+      }, 600);
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest mt-margin-lg"><div class="w-full px-gutter lg:px-gutter-lg py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-sm"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface uppercase">PRINSO</span><span class="font-label-mono-xs text-label-mono-xs text-primary">[LABS]</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">SOTA diffusion-matrix geometric synthesizers and air-gapped parametric checkpoint kernels for high-order creative computation.</p><div class="pt-space-xs"><span class="font-label-mono-xs text-label-mono-xs text-outline uppercase">SYS-LATENCY: 1.48MS // PARITY 99.98%</span></div></div><div><div class="font-label-mono-md text-label-mono-md text-primary uppercase mb-space-md tracking-wider">// SATIRICAL PREPRINTS</div><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#">arXiv:2409.8102 — Hallucination As Utility</a></li><li><a class="hover:text-on-surface transition-colors" href="#">arXiv:2410.0019 — Infinite VRAM Illusion</a></li><li><a class="hover:text-on-surface transition-colors" href="#">arXiv:2411.7741 — Silicon Satori Theorem</a></li><li><a class="hover:text-on-surface transition-colors" href="#">arXiv:2412.9904 — Deconstruction of Loss Surfaces</a></li></ul></div><div><div class="font-label-mono-md text-label-mono-md text-primary uppercase mb-space-md tracking-wider">// RESEARCH COHORTS</div><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#">Weights &amp; Biases Protocol</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Air-Gapped RTX 3090 Cluster</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Continuous Latent Topology</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Raw BibTeX Citation Registry</a></li></ul></div><div><div class="font-label-mono-md text-label-mono-md text-primary uppercase mb-space-md tracking-wider">// DISPATCH SUBSCRIPTION</div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Receive raw uncompiled mathematical telemetry and model patch advisories.</p><div class="flex items-center"><input class="w-full bg-surface-container-high px-space-sm py-2 font-label-mono-md text-label-mono-md text-on-surface placeholder-outline focus:outline-none" placeholder="researcher@lab.org" type="email"/><button class="px-space-md py-2 bg-primary text-on-primary font-label-mono-md text-label-mono-md uppercase hover:bg-inverse-surface hover:text-inverse-on-surface transition-colors">JOIN</button></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-label-mono-xs text-label-mono-xs text-outline uppercase"><div>© 2025 PRINSO FOUNDATION FOR RESIDUAL COMPUTE. ALL WEIGHTS OPEN-ACCESS.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">TERMS OF INFERENCE</a><a class="hover:text-on-surface transition-colors" href="#">SECURITY TELEMETRY</a><a class="hover:text-on-surface transition-colors" href="#">AIR-GAP POLICY</a><a class="hover:text-on-surface transition-colors" href="#">LEGAL / BIBTEX</a></div></div></div></footer></body></html>
